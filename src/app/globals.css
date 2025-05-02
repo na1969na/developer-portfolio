@@ -14,10 +14,14 @@
   --font-poppins: var(--font-poppins);
 }
 
+@theme {
+  --color-light-cream: #fffce1;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
-    --foreground: #ededed;
+    --foreground: #fffce1;
   }
 }
 
