@@ -17,6 +17,7 @@ const SidebarMenu = ({ activeSection, setActiveSection }: SidebarMenuProps) => {
     { id: "about", label: "About" },
     { id: "projects", label: "Projects" },
     { id: "contact", label: "Contact" },
+    { id: "resume", label: "Resume" },
   ];
 
   const [isOpen, setIsOpen] = useState(false);
@@ -67,7 +68,11 @@ const SidebarMenu = ({ activeSection, setActiveSection }: SidebarMenuProps) => {
                     ? "text-stone-50"
                     : "hover:text-stone-50"
                 )}
-                onClick={() => handleMenuClick(item.id)}
+                onClick={() =>
+                  item.id === "resume"
+                    ? window.open("https://docs.google.com/document/d/1AH9bwtW-rc9bxj8FZGTRkB8fRxEiR_Rs_85mffp004A/edit?usp=sharing", "_blank")
+                    : handleMenuClick(item.id)
+                }
               >
                 {item.label}
               </button>

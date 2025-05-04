@@ -11,7 +11,7 @@ const projects = [
     title: "E-Commerce Platform",
     description:
       "A full-featured e-commerce platform with user authentication, product management, and payment processing.",
-    image: "https://images.pexels.com/photos/5076521/pexels-photo-5076521.jpeg",
+    image: "",
     demoLink: "#",
     githubLink: "#",
     category: "web",
@@ -22,44 +22,11 @@ const projects = [
     title: "Task Management App",
     description:
       "A collaborative task management application with real-time updates and team workspace.",
-    image: "https://images.pexels.com/photos/927022/pexels-photo-927022.jpeg",
+    image: "",
     demoLink: "#",
     githubLink: "#",
     category: "web",
     technologies: ["React", "Firebase", "Redux", "Tailwind CSS"],
-  },
-  {
-    id: 3,
-    title: "AI Image Generator",
-    description:
-      "An application that uses machine learning to generate unique images based on text prompts.",
-    image: "https://images.pexels.com/photos/8386434/pexels-photo-8386434.jpeg",
-    demoLink: "#",
-    githubLink: "#",
-    category: "ai",
-    technologies: ["Python", "TensorFlow", "React", "Flask"],
-  },
-  {
-    id: 4,
-    title: "Budget Tracker",
-    description:
-      "A personal finance application to track expenses, set budgets, and visualize spending patterns.",
-    image: "https://images.pexels.com/photos/4386442/pexels-photo-4386442.jpeg",
-    demoLink: "#",
-    githubLink: "#",
-    category: "mobile",
-    technologies: ["React Native", "GraphQL", "MongoDB"],
-  },
-  {
-    id: 5,
-    title: "Weather Forecast App",
-    description:
-      "A weather application that provides accurate forecasts for any location worldwide.",
-    image: "https://images.pexels.com/photos/2448749/pexels-photo-2448749.jpeg",
-    demoLink: "#",
-    githubLink: "#",
-    category: "mobile",
-    technologies: ["Swift", "Kotlin", "RESTful API"],
   },
 ];
 

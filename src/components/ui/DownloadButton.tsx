@@ -1,39 +1,27 @@
 "use client";
 
-import { useRef } from "react";
-import { gsap } from "gsap";
+import { motion } from "framer-motion";
 import { ArrowDownToLine } from "lucide-react";
 
 const DownloadButton: React.FC = () => {
-  const buttonRef = useRef<HTMLButtonElement>(null);
-
-  const handleClick = () => {
-    if (buttonRef.current) {
-      gsap.fromTo(
-        buttonRef.current,
-        { scale: 1 },
-        {
-          scale: 1.2,
-          duration: 0.2,
-          ease: "power1.out",
-          yoyo: true,
-          repeat: 1,
-        }
-      );
-    }
-  };
-
   return (
-    <button
-      ref={buttonRef}
-      onClick={handleClick}
-      className="bg-pink-200 rounded-full p-7 text-xl flex gap-2 text-black font-semibold"
+    <motion.div
+      initial={{ opacity: 0, scale: 0.5 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{
+        duration: 0.8,
+        delay: 5,
+        ease: [0, 0.71, 0.2, 1.01],
+      }}
+      className="flex gap-4"
     >
-      <a href="/files/Resume_NanaOkamoto.pdf" download>
-        Download Resume
-      </a>
-      <ArrowDownToLine />
-    </button>
+      <button className="bg-pink-200 rounded-full p-7 text-xl flex gap-2 text-black font-semibold transition-transform transform hover:scale-105 hover:shadow-lg">
+        <a href="/files/Resume_NanaOkamoto.pdf" download>
+          Download Resume
+        </a>
+        <ArrowDownToLine />
+      </button>
+    </motion.div>
   );
 };
 

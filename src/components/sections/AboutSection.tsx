@@ -38,21 +38,18 @@ const AboutSection = () => {
     >
       <div>
         <h2 className="text-3xl font-bold mb-4">About Me</h2>
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-5">
           <div className="space-y-4">
             <p className="text-lg">
-              I am a passionate software engineer with over 4 years of
-              experience in building web applications and digital experiences. I
-              specialize in JavaScript, React, and modern web technologies.
+              Born and raised in Japan, currently living in Vancouver, BC. I
+              worked as a software engineer for over 4 years in a company.
             </p>
-            <p>
-              My approach combines technical expertise with a strong focus on
-              user experience. I believe in creating clean, efficient code that
-              translates into intuitive and beautiful interfaces.
+            <p className="text-lg">
+              I am always open to and enjoy communicating with people from
+              different backgrounds and cultures.
             </p>
-            <p>
-              When I am not coding, you will find me exploring new technologies,
-              contributing to open-source projects, or hiking in the mountains.
+            <p className="text-lg">
+              I enjoy learning new technologies and tools, writing articles.
             </p>
           </div>
           <div className="flex justify-center items-center">
@@ -64,14 +61,13 @@ const AboutSection = () => {
                 className="object-cover"
               /> */}
             </div>
-            <div></div>
           </div>
         </div>
       </div>
 
       <div>
         <h2 className="text-3xl font-bold mb-4">Experience</h2>
-        <div className="flex space-y-4">
+        <div className="space-y-4">
           {experiences.map((exp, index) => (
             <div key={index} className="card bg-base-200">
               <div className="card-body p-6">
