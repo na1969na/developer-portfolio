@@ -6,25 +6,18 @@ import { BadgeCheck } from "lucide-react";
 const AboutSection = () => {
   const experiences = [
     {
-      title: "Senior Frontend Developer",
-      company: "Tech Innovations Inc.",
-      period: "2020 - Present",
+      title: "Full Stack Developer",
+      company: "GeneL Inc.",
+      period: "12/2024 - Present",
       description:
         "Leading frontend development for enterprise applications, mentoring junior developers, and implementing best practices.",
     },
     {
       title: "Full Stack Developer",
-      company: "Digital Solutions Ltd.",
-      period: "2018 - 2020",
+      company: "Mitsui E&S Systems Research Inc.",
+      period: "04/2021 - 07/2024",
       description:
         "Developed and maintained full-stack applications using React, Node.js, and MongoDB.",
-    },
-    {
-      title: "Junior Developer",
-      company: "Web Creators",
-      period: "2016 - 2018",
-      description:
-        "Collaborated on various web projects focusing on responsive design and frontend functionality.",
     },
   ];
 
@@ -42,7 +35,7 @@ const AboutSection = () => {
           <div className="space-y-4">
             <p className="text-lg">
               Born and raised in Japan, currently living in Vancouver, BC. I
-              worked as a software engineer for over 4 years in a company.
+              worked as a full-stack developer for over 4 years in a company.
             </p>
             <p className="text-lg">
               I am always open to and enjoy communicating with people from
