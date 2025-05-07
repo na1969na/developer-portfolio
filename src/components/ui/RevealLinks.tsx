@@ -10,10 +10,12 @@ const RevealLinks = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <FlipLink href="#">Email</FlipLink>
-      <FlipLink href="#">Linkedin</FlipLink>
-      <FlipLink href="#">Github</FlipLink>
-      <FlipLink href="#">Dev.to</FlipLink>
+      <FlipLink href="mailto:nanaokamoto.tech@gmail.com">Email</FlipLink>
+      <FlipLink href="https://www.linkedin.com/in/nana-okamoto/">
+        Linkedin
+      </FlipLink>
+      <FlipLink href="https://github.com/na1969na">Github</FlipLink>
+      <FlipLink href="https://dev.to/na1969na">Dev.to</FlipLink>
     </motion.section>
   );
 };
@@ -21,7 +23,12 @@ const RevealLinks = () => {
 const DURATION = 0.25;
 const STAGGER = 0.025;
 
-const FlipLink = ({ children, href }) => {
+interface FlipLinkProps {
+  children: string;
+  href: string;
+}
+
+const FlipLink = ({ children, href }: FlipLinkProps) => {
   return (
     <motion.a
       initial="initial"

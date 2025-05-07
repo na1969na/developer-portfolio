@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import RevealLinks from "../ui/RevealLinks";
 import AnimatedHeading from "../ui/AnimatedHeading";
+import Image from "next/image";
 
 const ContactSection = () => {
   return (
@@ -24,7 +25,30 @@ const ContactSection = () => {
           </p>
         </div>
       </div>
-      <RevealLinks />
+      <div className="flex items-end justify-between">
+        <RevealLinks />
+        <motion.div
+          whileHover={{ scale: 1.1, rotate: -45 }}
+          animate={{
+            y: [0, -10, 0],
+            rotate: -30,
+          }}
+          transition={{
+            y: {
+              duration: 1.5,
+              repeat: Infinity,
+              ease: "easeInOut",
+            },
+          }}
+        >
+          <Image
+            src="/click.png"
+            alt="Contact"
+            height={100}
+            width={100}
+          />
+        </motion.div>
+      </div>
     </motion.div>
   );
 };
