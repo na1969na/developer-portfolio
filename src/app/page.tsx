@@ -38,12 +38,12 @@ export default function Home() {
 
       {/* Main Content Area */}
       <motion.div
-        className="flex-1 overflow-y-auto p-6 lg:p-12"
+        className="w-full flex-1 overflow-y-auto p-6 lg:p-12"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
       >
-        <div className="container mx-auto max-w-5xl">
+        <div className="container">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeSection}

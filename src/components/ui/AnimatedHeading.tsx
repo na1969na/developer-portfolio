@@ -24,7 +24,7 @@ const AnimatedHeading = ({ text }: AnimatedHeadingProps) => {
             staggerChildren: 0.075,
             delayChildren: 0.25,
           }}
-          className="text-5xl"
+          className="text-4xl"
         >
           {text.split("").map((l, i) => (
             <motion.span

@@ -174,22 +174,3 @@ const HomeSection = () => {
 };
 
 export default HomeSection;
-
-// <p>FrontEnd</p>
-{
-  /* <p>
-TypeScript / JavaScript / React.js / Next.js / Anuglar.js /
-Chakra UI / Tailwind CSS / shadcn / HTML / CSS
-</p>
-</div>
-<div className="skills">
-<p>BackEnd</p>
-<p>
-Node.js / C# / Express.js / ASP.NET / ASP.NET Core /
-PostgreSQL / Prisma / Oracle / MongoDB
-</p>
-</div>
-<div className="skills">
-<p>Tools</p>
-<p>Git / GitHub / GitLab / AWS</p> */
-}
