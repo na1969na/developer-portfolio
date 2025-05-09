@@ -1,8 +1,7 @@
 "use client";
 
+import { motion, useAnimation, useInView } from "framer-motion";
 import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrambleTextPlugin } from "gsap/ScrambleTextPlugin";
 import { cn } from "@/lib/utils";
 
 interface ScrambleTextProps {
@@ -10,35 +9,42 @@ interface ScrambleTextProps {
   className?: string;
 }
 
-gsap.registerPlugin(ScrambleTextPlugin);
-
 const ScrambleText: React.FC<ScrambleTextProps> = ({ text, className }) => {
-  const textRef = useRef<HTMLDivElement>(null);
+  const ref = useRef(null);
+  const isInView = useInView(ref);
+  const controls = useAnimation();
 
   useEffect(() => {
-    if (textRef.current) {
-      gsap.fromTo(
-        textRef.current,
-        { textContent: "" },
-        {
-          textContent: text,
-          duration: 5,
-          scrambleText: {
-            text: text,
-            chars: "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
-            speed: 0.6,
-          },
-          ease: "power2.inOut",
-        }
-      );
+    if (isInView) {
+      controls.start({
+        opacity: 1,
+        transition: { duration: 0.5 },
+      });
     }
-  }, [text]);
+  }, [isInView, controls]);
 
   return (
-    <div
-      ref={textRef}
+    <motion.div
+      ref={ref}
       className={cn("text-2xl", className)}
-    ></div>
+      initial={{ opacity: 0 }}
+      animate={controls}
+    >
+      {text.split("").map((char, index) => (
+        <motion.span
+          key={index}
+          initial={{ opacity: 0, y: 20 }}
+          animate={controls}
+          transition={{
+            duration: 0.5,
+            delay: index * 0.1,
+            ease: "easeOut",
+          }}
+        >
+          {char}
+        </motion.span>
+      ))}
+    </motion.div>
   );
 };
 

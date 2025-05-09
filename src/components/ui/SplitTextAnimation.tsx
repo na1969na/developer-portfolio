@@ -1,47 +1,43 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { SplitText } from "gsap/SplitText";
+import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
-
-gsap.registerPlugin(SplitText);
 
 const SplitTextAnimation: React.FC<{ text: string; className?: string }> = ({
   text,
   className,
 }) => {
-  const textContainerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (textContainerRef.current) {
-      const split = new SplitText(textContainerRef.current, {
-        type: "chars",
-        charsClass: "char",
-      });
-
-      gsap.from(split.chars, {
-        y: -100,
-        opacity: 0,
-        rotation: "random(-80, 80)",
-        stagger: 0.1,
-        duration: 1,
-        ease: "back",
-      });
-
-      return () => {
-        split.revert();
-      };
-    }
-  }, []);
-
   return (
     <div
-      ref={textContainerRef}
-      className={cn("overflow-hidden", className)}
-      style={{ whiteSpace: "nowrap" }}
+      className={cn("overflow-hidden perspective-1000", className)}
+      style={{
+        perspective: "1000px",
+        whiteSpace: "nowrap",
+      }}
     >
-      {text}
+      <motion.div
+        initial={{
+          scale: 2,
+          opacity: 0,
+          z: 100,
+          rotateX: 45,
+        }}
+        animate={{
+          scale: 1,
+          opacity: 1,
+          z: 0,
+          rotateX: 0,
+        }}
+        transition={{
+          duration: 1.2,
+          type: "spring",
+          stiffness: 50,
+          damping: 20,
+          mass: 1.5,
+        }}
+      >
+        {text}
+      </motion.div>
     </div>
   );
 };

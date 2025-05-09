@@ -41,12 +41,7 @@ const ContactSection = () => {
             },
           }}
         >
-          <Image
-            src="/click.png"
-            alt="Contact"
-            height={100}
-            width={100}
-          />
+          <Image src="/click.png" alt="Contact" height={100} width={100} />
         </motion.div>
       </div>
     </motion.div>

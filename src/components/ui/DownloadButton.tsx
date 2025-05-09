@@ -10,7 +10,7 @@ const DownloadButton: React.FC = () => {
       animate={{ opacity: 1, scale: 1 }}
       transition={{
         duration: 0.8,
-        delay: 5,
+        delay: 2,
         ease: [0, 0.71, 0.2, 1.01],
       }}
       className="flex gap-4"
