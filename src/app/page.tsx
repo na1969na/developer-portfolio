@@ -27,7 +27,7 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col h-screen overflow-hidden font-[family-name:var(--font-poppins)]">
+    <div className="flex flex-col h-screen overflow-y-auto font-[family-name:var(--font-poppins)]">
       {/* Header with Navbar */}
       <header className="w-full container mx-auto flex justify-center">
         <Navbar
@@ -38,7 +38,7 @@ export default function Home() {
 
       {/* Main Content Area */}
       <motion.div
-        className="w-full flex-1 overflow-y-auto p-6 lg:p-12"
+        className="w-full container mx-auto flex justify-center min-h-screen"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
@@ -51,7 +51,7 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.3 }}
-              className="min-h-[calc(100vh-6rem)]"
+              className="py-8"
             >
               {renderSection()}
             </motion.div>

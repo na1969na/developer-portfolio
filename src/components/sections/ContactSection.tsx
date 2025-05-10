@@ -8,7 +8,7 @@ import Image from "next/image";
 const ContactSection = () => {
   return (
     <motion.div
-      className="space-y-10"
+      className="space-y-10 pt-10"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
@@ -25,23 +25,21 @@ const ContactSection = () => {
           </p>
         </div>
       </div>
-      <div className="flex items-end justify-between">
+      <div className="flex items-center gap-16">
         <RevealLinks />
         <motion.div
-          whileHover={{ scale: 1.1, rotate: -45 }}
-          animate={{
-            y: [0, -10, 0],
-            rotate: -30,
+          initial={{ rotate: 0 }}
+          whileInView={{
+            rotate: 360,
           }}
           transition={{
-            y: {
-              duration: 1.5,
-              repeat: Infinity,
-              ease: "easeInOut",
-            },
+            duration: 20,
+            repeat: Infinity,
+            ease: "linear",
           }}
+          viewport={{ once: false }}
         >
-          <Image src="/click.png" alt="Contact" height={100} width={100} />
+          <Image src="/moon.svg" alt="Contact" height={400} width={400} />
         </motion.div>
       </div>
     </motion.div>

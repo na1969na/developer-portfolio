@@ -2,58 +2,43 @@
 
 import { motion } from "framer-motion";
 import AnimatedHeading from "../ui/AnimatedHeading";
-import { BadgeCheck } from "lucide-react";
 import Image from "next/image";
 
-const experiences = [
+interface Experience {
+  title: string;
+  company: string;
+  period: string;
+  description: string[];
+  skills: string[];
+}
+
+const experiences: Experience[] = [
   {
-    title: "Full Stack Developer",
+    title: "Full-stack developer",
     company: "GeneL Inc.",
-    period: "12/2024 - Present",
-    description:
-      "Leading frontend development for enterprise applications, mentoring junior developers, and implementing best practices.",
-    skills: [
-      {
-        name: "React",
-        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
-      },
-      {
-        name: "TypeScript",
-        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
-      },
-      {
-        name: "Node.js",
-        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
-      },
+    period: "December 2024 - Present",
+    description: [
+      "Developed and maintained frontend and backend functionalities using Ruby on Rails for a leading CRO tool.",
+      "Designed user interfaces and implemented interactive features to improve usability and engagement.",
     ],
+    skills: ["Ruby on Rails"],
   },
   {
-    title: "Full Stack Developer",
+    title: "Full-stack developer",
     company: "Mitsui E&S Systems Research Inc.",
-    period: "04/2021 - 07/2024",
-    description:
-      "Developed and maintained full-stack applications using React, Node.js, and MongoDB.",
-    skills: [
-      {
-        name: "React",
-        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
-      },
-      {
-        name: "Node.js",
-        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
-      },
-      {
-        name: "MongoDB",
-        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
-      },
+    period: "April 2021 - July 2024",
+    description: [
+      "Designed and implemented frontend and backend architecture, achieving 90%+ test coverage and reducing bug reports by 40% through improved code review protocols.",
+      "Led technical design sessions for critical components like the approval workflow engine and multi-tenant architecture.",
     ],
+    skills: ["Next.js", "React", "Node.js", "MongoDB"],
   },
 ];
 
 const AboutSection = () => {
   return (
     <motion.div
-      className="text-3xl py-8 w-full"
+      className="text-3xl pt-20 w-full relative min-h-screen overflow-y-auto"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
@@ -64,62 +49,182 @@ const AboutSection = () => {
           <AnimatedHeading text="About" />
           <AnimatedHeading text="Me" />
         </div>
-        <div>
-          <h1 className="text-9xl font-black">Nana</h1>
-          <h1 className="text-9xl font-black">Okamoto</h1>
-          <div className="space-y-2 max-w-4xl ml-auto">
-            <p>I&apos;m a full-stack developer with over 4 years experience.</p>
-            <p>
-              Born and raised in Japan, currently living in Vancouver, BC. I
-              worked as a full-stack developer for over 4 years in a company.
+
+        <div className="flex justify-center my-20">
+          <motion.div
+            initial={{ rotate: 0 }}
+            whileInView={{
+              rotate: 360,
+            }}
+            transition={{
+              duration: 20,
+              repeat: Infinity,
+              ease: "linear",
+            }}
+            viewport={{ once: false }}
+          >
+            <Image src="/moon.svg" alt="Asterisk" width={200} height={200} />
+          </motion.div>
+        </div>
+
+        <div className="flex flex-col items-center mt-20">
+          <motion.h1
+            className="font-black whitespace-nowrap"
+            initial={{ y: 100, opacity: 0, scale: 0.5 }}
+            animate={{ y: 0, opacity: 1, scale: 1 }}
+            transition={{
+              duration: 1.2,
+              ease: [0.16, 1, 0.3, 1],
+              scale: {
+                duration: 0.8,
+                ease: "easeOut",
+              },
+            }}
+            style={{ fontSize: "8rem" }}
+          >
+            Nana Okamoto
+          </motion.h1>
+
+          <div className="flex justify-center my-20">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
+              className="relative w-64 h-64 overflow-hidden"
+            >
+              <Image
+                src="/profile_image.png"
+                alt="Nana Okamoto"
+                fill
+                className="object-cover"
+                priority
+              />
+            </motion.div>
+          </div>
+
+          <div className="text-5xl space-y-2 w-full">
+            <p className="tracking-wider leading-tight">
+              <span className="text-[#FF8709]">Full-stack developer</span> with{" "}
+              <span className="relative">
+                4+ years
+                <svg
+                  viewBox="0 0 286 73"
+                  fill="none"
+                  className="absolute -left-2 -right-2 -top-2 bottom-0 translate-y-1"
+                >
+                  <motion.path
+                    initial={{ pathLength: 0 }}
+                    whileInView={{ pathLength: 1 }}
+                    transition={{
+                      duration: 1.25,
+                      ease: "easeInOut",
+                    }}
+                    d="M142.293 1C106.854 16.8908 6.08202 7.17705 1.23654 43.3756C-2.10604 68.3466 29.5633 73.2652 122.688 71.7518C215.814 70.2384 316.298 70.689 275.761 38.0785C230.14 1.37835 97.0503 24.4575 52.9384 1"
+                    stroke="#FF8709"
+                    strokeWidth="3"
+                  />
+                </svg>
+              </span>{" "}
+              of experience in enterprise application development.
             </p>
-            <p>
-              I am always open to and enjoy communicating with people from
-              different backgrounds and cultures.
+            <p className="tracking-wider leading-tight">
+              Based in{" "}
+              <span className="bg-[#FF8709] text-black px-4 py-1 rounded-full inline-block font-semibold">
+                Vancouver, BC
+              </span>
+              , specializing in scalable solutions and technical leadership.
             </p>
-            <p>
-              I enjoy learning new technologies and tools, writing articles.
+            <p className="tracking-wider leading-tight">
+              Committed to{" "}
+              <span className="text-[#87CEEB]">
+                {"{"}
+                {"continuous learning".split("").map((char, index) => (
+                  <motion.span
+                    key={index}
+                    className="inline-block"
+                    initial={{ opacity: 0, y: 20, rotate: -10 }}
+                    whileInView={{ opacity: 1, y: 0, rotate: 0 }}
+                    transition={{
+                      duration: 0.3,
+                      delay: index * 0.05,
+                      ease: "easeOut",
+                    }}
+                    viewport={{ once: false }}
+                  >
+                    {char === " " ? "\u00A0" : char}
+                  </motion.span>
+                ))}
+                {"}"}
+              </span>{" "}
+              and{" "}
+              <span className="text-[#87CEEB] whitespace-nowrap">
+                {"{"}
+                {"knowledge sharing".split("").map((char, index) => (
+                  <motion.span
+                    key={index}
+                    className="inline-block"
+                    initial={{ opacity: 0, y: 20, rotate: -10 }}
+                    whileInView={{ opacity: 1, y: 0, rotate: 0 }}
+                    transition={{
+                      duration: 0.3,
+                      delay: index * 0.05 + 1,
+                      ease: "easeOut",
+                    }}
+                    viewport={{ once: false }}
+                  >
+                    {char === " " ? "\u00A0" : char}
+                  </motion.span>
+                ))}
+                {"}"}
+              </span>{" "}
+              in the tech community.
             </p>
           </div>
         </div>
-        {/* <div className="grid md:grid-cols-2 gap-5">
-          <div className="flex justify-center items-center">
-            <div className="relative w-64 h-64 rounded-full overflow-hidden border-4 border-primary">
-              <Image
-                src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg"
-                alt="Profile"
-                fill
-                className="object-cover"
-              />
-            </div>
-          </div>
-        </div> */}
       </div>
 
-      <div className="flex gap-10 mt-20">
-        <div className="space-y-8">
+      <div className="flex justify-center my-10">
+        <motion.div
+          initial={{ y: 0 }}
+          whileInView={{
+            y: [0, -15, 0],
+          }}
+          transition={{
+            duration: 2,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          viewport={{ once: false }}
+        >
+          <Image src="/block.svg" alt="Asterisk" width={200} height={200} />
+        </motion.div>
+      </div>
+
+      <div>
+        <h2 className="text-5xl mb-10">Experience</h2>
+        <div className="space-y-10">
           {experiences.map((exp, index) => (
-            <div key={index} className="border-t border-gray-200 pt-6">
-              <div className="flex justify-between items-start mb-2">
-                <div>
-                  <h2 className="text-6xl font-bold mb-6">{exp.period}</h2>
-                  <h3 className="text-4xl font-bold mb-2">{exp.title}</h3>
-                  <div className="flex items-center mt-1">
-                    {exp.company}
-                  </div>
-                </div>
-              </div>
-              <p className="text-lg leading-relaxed">{exp.description}</p>
-              <div className="flex gap-4 mt-4">
-                {exp.skills.map((skill) => (
-                  <div key={skill.name} className="relative w-8 h-8">
-                    <Image
-                      src={skill.icon}
-                      alt={skill.name}
-                      fill
-                      className="object-contain"
-                    />
-                  </div>
+            <div
+              key={index}
+              className="flex flex-col gap-4 text-3xl p-6 bg-base-200"
+            >
+              <h3 className="font-semibold">
+                {exp.title} | {exp.company}
+              </h3>
+              <p className="text-xl opacity-70">{exp.period}</p>
+              <ul className="text-xl opacity-70 list-disc pl-6">
+                {exp.description.map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
+              <div className="flex flex-wrap gap-2">
+                {exp.skills.map((skill, index) => (
+                  <span
+                    key={index}
+                    className="bg-black text-xl px-3 py-2 rounded-full"
+                  >
+                    {skill}
+                  </span>
                 ))}
               </div>
             </div>

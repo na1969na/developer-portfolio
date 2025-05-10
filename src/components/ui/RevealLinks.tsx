@@ -1,21 +1,54 @@
 "use client";
 
 import { motion } from "framer-motion";
-
+import Image from "next/image";
 const RevealLinks = () => {
   return (
     <motion.section
-      className="grid gap-6 md:gap-8 max-w-3xl"
+      className="grid max-w-5xl"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
       <FlipLink href="mailto:nanaokamoto.tech@gmail.com">Email</FlipLink>
-      <FlipLink href="https://www.linkedin.com/in/nana-okamoto/">
-        Linkedin
-      </FlipLink>
+      <div className="flex items-center gap-16">
+        <FlipLink href="https://www.linkedin.com/in/nana-okamoto/">
+          Linkedin
+        </FlipLink>
+        <motion.div
+          whileHover={{ scale: 1.1, rotate: -30 }}
+          transition={{
+            y: {
+              duration: 1.5,
+              repeat: Infinity,
+              ease: "easeInOut",
+            },
+          }}
+          className="items-center justify-center"
+        >
+          <Image src="/chain.svg" alt="chain" height={200} width={200} />
+        </motion.div>
+      </div>
       <FlipLink href="https://github.com/na1969na">Github</FlipLink>
-      <FlipLink href="https://dev.to/na1969na">Dev.to</FlipLink>
+      <div className="flex items-center gap-16">
+        <FlipLink href="https://dev.to/na1969na">Dev.to</FlipLink>
+        <motion.div
+          whileHover={{ scale: 1.1, rotate: -45 }}
+          animate={{
+            y: [0, -10, 0],
+            rotate: -30,
+          }}
+          transition={{
+            y: {
+              duration: 1.5,
+              repeat: Infinity,
+              ease: "easeInOut",
+            },
+          }}
+        >
+          <Image src="/click.png" alt="click" height={100} width={100} />
+        </motion.div>
+      </div>
     </motion.section>
   );
 };
