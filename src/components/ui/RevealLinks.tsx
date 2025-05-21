@@ -5,35 +5,17 @@ import Image from "next/image";
 const RevealLinks = () => {
   return (
     <motion.section
-      className="grid max-w-5xl"
+      className="grid w-full"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
       <FlipLink href="mailto:nanaokamoto.tech@gmail.com">Email</FlipLink>
-      <div className="flex items-center gap-16">
+      <div className="flex items-center gap-20">
         <FlipLink href="https://www.linkedin.com/in/nana-okamoto/">
           Linkedin
         </FlipLink>
         <motion.div
-          whileHover={{ scale: 1.1, rotate: -30 }}
-          transition={{
-            y: {
-              duration: 1.5,
-              repeat: Infinity,
-              ease: "easeInOut",
-            },
-          }}
-          className="items-center justify-center"
-        >
-          <Image src="/chain.svg" alt="chain" height={200} width={200} />
-        </motion.div>
-      </div>
-      <FlipLink href="https://github.com/na1969na">Github</FlipLink>
-      <div className="flex items-center gap-16">
-        <FlipLink href="https://dev.to/na1969na">Dev.to</FlipLink>
-        <motion.div
-          whileHover={{ scale: 1.1, rotate: -45 }}
           animate={{
             y: [0, -10, 0],
             rotate: -30,
@@ -46,8 +28,18 @@ const RevealLinks = () => {
             },
           }}
         >
-          <Image src="/click.png" alt="click" height={100} width={100} />
+          <Image src="/click.png" alt="click" height={80} width={80} />
         </motion.div>
+      </div>
+      <div className="flex flex-col items-end gap-4 mt-8">
+        <p className="text-lg">Check out my technical articles and code.</p>
+        <div className="flex gap-4">
+          <Image src="/noodle_fan.svg" alt="click" height={200} width={200} />
+          <div className="flex flex-col items-end gap-4">
+            <FlipLink href="https://github.com/na1969na">Github</FlipLink>
+            <FlipLink href="https://dev.to/na1969na">Dev.to</FlipLink>
+          </div>
+        </div>
       </div>
     </motion.section>
   );

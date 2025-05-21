@@ -21,7 +21,7 @@ const experiences: Experience[] = [
       "Developed and maintained frontend and backend functionalities using Ruby on Rails for a leading CRO tool.",
       "Designed user interfaces and implemented interactive features to improve usability and engagement.",
     ],
-    skills: ["Ruby on Rails"],
+    skills: ["Ruby on Rails", "MySQL"],
   },
   {
     title: "Full-stack developer",
@@ -31,7 +31,7 @@ const experiences: Experience[] = [
       "Designed and implemented frontend and backend architecture, achieving 90%+ test coverage and reducing bug reports by 40% through improved code review protocols.",
       "Led technical design sessions for critical components like the approval workflow engine and multi-tenant architecture.",
     ],
-    skills: ["Next.js", "React", "Node.js", "MongoDB"],
+    skills: ["Next.js", "React", "Angular.js", "Node.js", "TypeScript", "C#", "PostgreSQL", "MongoDB"],
   },
 ];
 
@@ -50,22 +50,22 @@ const AboutSection = () => {
           <AnimatedHeading text="Me" />
         </div>
 
-        <div className="flex justify-center my-20">
-          <motion.div
-            initial={{ rotate: 0 }}
-            whileInView={{
-              rotate: 360,
-            }}
-            transition={{
-              duration: 20,
-              repeat: Infinity,
-              ease: "linear",
-            }}
-            viewport={{ once: false }}
-          >
-            <Image src="/moon.svg" alt="Asterisk" width={200} height={200} />
-          </motion.div>
-        </div>
+        <div className="flex justify-center my-15">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
+              className="relative w-64 h-64 overflow-hidden"
+            >
+              <Image
+                src="/profile_image.png"
+                alt="Nana Okamoto"
+                fill
+                className="object-cover"
+                priority
+              />
+            </motion.div>
+          </div>
 
         <div className="flex flex-col items-center mt-20">
           <motion.h1
@@ -85,24 +85,7 @@ const AboutSection = () => {
             Nana Okamoto
           </motion.h1>
 
-          <div className="flex justify-center my-20">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5 }}
-              className="relative w-64 h-64 overflow-hidden"
-            >
-              <Image
-                src="/profile_image.png"
-                alt="Nana Okamoto"
-                fill
-                className="object-cover"
-                priority
-              />
-            </motion.div>
-          </div>
-
-          <div className="text-5xl space-y-2 w-full">
+          <div className="text-5xl space-y-2 w-full mt-15">
             <p className="tracking-wider leading-tight">
               <span className="text-[#FF8709]">Full-stack developer</span> with{" "}
               <span className="relative">
@@ -206,7 +189,7 @@ const AboutSection = () => {
           {experiences.map((exp, index) => (
             <div
               key={index}
-              className="flex flex-col gap-4 text-3xl p-6 bg-base-200"
+              className="flex flex-col gap-4 text-3xl p-6 border border-light-cream rounded-2xl"
             >
               <h3 className="font-semibold">
                 {exp.title} | {exp.company}
