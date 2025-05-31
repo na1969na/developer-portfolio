@@ -1,16 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import AnimatedHeading from "../ui/AnimatedHeading";
 import Image from "next/image";
-
-interface Experience {
-  title: string;
-  company: string;
-  period: string;
-  description: string[];
-  skills: string[];
-}
+import { Experience } from "@/types/type";
 
 const experiences: Experience[] = [
   {
@@ -31,41 +23,41 @@ const experiences: Experience[] = [
       "Designed and implemented frontend and backend architecture, achieving 90%+ test coverage and reducing bug reports by 40% through improved code review protocols.",
       "Led technical design sessions for critical components like the approval workflow engine and multi-tenant architecture.",
     ],
-    skills: ["Next.js", "React", "Angular.js", "Node.js", "TypeScript", "C#", "PostgreSQL", "MongoDB"],
+    skills: [
+      "Next.js",
+      "React",
+      "Angular.js",
+      "Node.js",
+      "TypeScript",
+      "C#",
+      "PostgreSQL",
+      "MongoDB",
+    ],
   },
 ];
 
 const AboutSection = () => {
   return (
-    <motion.div
-      className="text-3xl pt-20 w-full relative min-h-screen overflow-y-auto"
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -20 }}
-      transition={{ duration: 0.5 }}
-    >
+    <div className="text-3xl pt-20 w-full relative min-h-screen overflow-y-auto">
       <div className="w-full space-y-10">
-        <div className="text-center">
-          <AnimatedHeading text="About" />
-          <AnimatedHeading text="Me" />
-        </div>
+        <h1 className="text-center">About Me</h1>
 
         <div className="flex justify-center my-15">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5 }}
-              className="relative w-64 h-64 overflow-hidden"
-            >
-              <Image
-                src="/profile_image.png"
-                alt="Nana Okamoto"
-                fill
-                className="object-cover"
-                priority
-              />
-            </motion.div>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            className="relative w-64 h-64 overflow-hidden"
+          >
+            <Image
+              src="/profile_image.png"
+              alt="Nana Okamoto"
+              fill
+              className="object-cover"
+              priority
+            />
+          </motion.div>
+        </div>
 
         <div className="flex flex-col items-center mt-20">
           <motion.h1
@@ -214,7 +206,7 @@ const AboutSection = () => {
           ))}
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 

@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence, LayoutGroup } from "framer-motion";
 import { GithubIcon, X } from "lucide-react";
-import AnimatedHeading from "../ui/AnimatedHeading";
+import AnimatedHeading from "../about/AnimatedHeading";
 
 const projects = [
   {

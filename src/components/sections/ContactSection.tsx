@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import RevealLinks from "../ui/RevealLinks";
-import AnimatedHeading from "../ui/AnimatedHeading";
+import AnimatedHeading from "../about/AnimatedHeading";
 
 const ContactSection = () => {
   return (
