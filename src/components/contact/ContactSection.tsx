@@ -1,8 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import RevealLinks from "../ui/RevealLinks";
-import AnimatedHeading from "../about/AnimatedHeading";
+import RevealLinks from "./RevealLinks";
 
 const ContactSection = () => {
   return (
@@ -14,7 +13,7 @@ const ContactSection = () => {
       transition={{ duration: 0.5 }}
     >
       <div className="space-y-3">
-        <AnimatedHeading text="Contact" />
+        <h1 className="text-4xl">Contact</h1>
         <div>
           <p className="text-lg">
             I am always open to new opportunities and collaborations.
