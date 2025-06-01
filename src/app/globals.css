@@ -17,6 +17,9 @@
 @theme {
   --color-lime-green: #cdff03;
   --color-light-cream: #fffce1;
+  --color-light-pink: #fec5fb;
+  --color-light-blue: #87ceeb;
+  --color-butter-yellow: #ffeda8;
 }
 
 @media (prefers-color-scheme: dark) {
