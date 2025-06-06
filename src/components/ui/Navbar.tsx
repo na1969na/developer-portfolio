@@ -35,12 +35,7 @@ const Navbar = ({ activeSection, setActiveSection }: NavbarProps) => {
       return;
     }
 
-    const element = document.getElementById(section);
-
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-      setActiveSection(section);
-    }
+    setActiveSection(section);
 
     if (!isDesktop) {
       setIsOpen(false);
@@ -68,7 +63,11 @@ const Navbar = ({ activeSection, setActiveSection }: NavbarProps) => {
                   ? "text-stone-50"
                   : "text-stone-500 hover:text-stone-50"
               )}
-              onClick={() => handleMenuClick(item.id)}
+              onClick={() =>
+                item.id === "resume"
+                  ? handleMenuClick(item.id)
+                  : handleMenuClick(item.id)
+              }
               whileHover="hover"
               initial="initial"
             >

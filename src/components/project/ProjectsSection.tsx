@@ -44,7 +44,7 @@ const ProjectsSection = () => {
 
   return (
     <motion.div
-      className="text-3xl pt-12 w-full h-[calc(100vh-6rem)] overflow-y-auto"
+      className="text-3xl pt-12 w-full"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
