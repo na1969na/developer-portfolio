@@ -30,7 +30,18 @@ const Navbar = ({ activeSection, setActiveSection }: NavbarProps) => {
   }, [isDesktop]);
 
   const handleMenuClick = (section: string) => {
-    setActiveSection(section);
+    if (section === "resume") {
+      window.open("/files/Resume_NanaOkamoto.pdf", "_blank");
+      return;
+    }
+
+    const element = document.getElementById(section);
+
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+      setActiveSection(section);
+    }
+
     if (!isDesktop) {
       setIsOpen(false);
     }
@@ -57,14 +68,7 @@ const Navbar = ({ activeSection, setActiveSection }: NavbarProps) => {
                   ? "text-stone-50"
                   : "text-stone-500 hover:text-stone-50"
               )}
-              onClick={() =>
-                item.id === "resume"
-                  ? window.open(
-                      "https://docs.google.com/document/d/1AH9bwtW-rc9bxj8FZGTRkB8fRxEiR_Rs_85mffp004A/edit?usp=sharing",
-                      "_blank"
-                    )
-                  : handleMenuClick(item.id)
-              }
+              onClick={() => handleMenuClick(item.id)}
               whileHover="hover"
               initial="initial"
             >

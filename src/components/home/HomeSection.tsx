@@ -20,10 +20,12 @@ const HomeSection = () => {
       />
       <div className="flex flex-col items-center">
         <p className="text-8xl whitespace-nowrap font-black text-center">
-          <ScrambleText text="CREATING" /> <ScrambleText text="SEAMLESS" />
+          <ScrambleText text="CREATING" />{" "}
+          <ScrambleText text="SEAMLESS" className="text-[#dfdcff]" />
         </p>
         <p className="text-8xl whitespace-nowrap font-black text-center tracking-tight">
-          <ScrambleText text="DIGITAL" /> <ScrambleText text="SOLUTIONS" />
+          <ScrambleText text="DIGITAL" className="text-[#dfdcff]" />{" "}
+          <ScrambleText text="SOLUTIONS" />
         </p>
       </div>
     </div>

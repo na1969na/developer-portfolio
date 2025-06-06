@@ -10,12 +10,12 @@ const projects: Project[] = [
   {
     id: "1",
     title: "BRIDGE",
-    image: "",
+    image: "/project_3.svg",
   },
   {
     id: "2",
-    title: "App",
-    image: "",
+    title: "Gatherly",
+    image: "/project_4.svg",
   },
 ];
 
@@ -44,7 +44,7 @@ const ProjectsSection = () => {
 
   return (
     <motion.div
-      className="text-3xl pt-12 w-full relative h-[calc(100vh-6rem)] overflow-hidden"
+      className="text-3xl pt-12 w-full h-[calc(100vh-6rem)] overflow-y-auto"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
@@ -52,20 +52,18 @@ const ProjectsSection = () => {
     >
       <LayoutGroup>
         <div className="h-full flex flex-col">
-          <div className="space-y-1 mb-4">
-            <h1 className="text-4xl">Projects</h1>
-            <p className="text-xl">
-              Here are some of the projects I have worked on.
-            </p>
-          </div>
+          <h1 className="text-5xl font-black mb-10">projects/</h1>
 
-          <div className="grid grid-cols-2 gap-4 flex-1">
+          <div className="flex gap-18 flex-col">
             {projects.map((project) => (
-              <ProjectCard
-                key={project.id}
-                project={project}
-                onClick={() => setSelectedProject(project)}
-              />
+              <div key={project.id}>
+                <h2 className="text-7xl font-bold mb-4">{project.title}</h2>
+                <ProjectCard
+                  key={project.id}
+                  project={project}
+                  onClick={() => setSelectedProject(project)}
+                />
+              </div>
             ))}
           </div>
         </div>

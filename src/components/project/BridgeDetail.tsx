@@ -20,24 +20,18 @@ const technologies = [
   "MongoDB",
 ];
 
-const ProjectDetail = ({
-  onClose,
-  id,
-}: {
-  onClose: () => void;
-  id: string;
-}) => {
+const BridgeDetail = ({ onClose, id }: { onClose: () => void; id: string }) => {
   return (
     <motion.div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 text-xl"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 text-xl"
       onClick={onClose}
     >
       <motion.div
         layoutId={`project-${id}`}
-        className="relative w-[90%] max-w-6xl h-[90vh] bg-black rounded-2xl overflow-hidden border border-white/20"
+        className="relative w-[90%] max-w-full h-[90vh] bg-black rounded-2xl overflow-hidden border border-white/20"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="absolute inset-0 p-12 flex flex-col overflow-y-auto">
@@ -109,8 +103,8 @@ const ProjectDetail = ({
               <span>
                 This app is especially helpful for elderly individuals living
                 alone, busy professionals, and anyone at risk of isolation.
-                Bridge is more than an app—it’s a lifeline for those who need it
-                most.
+                Bridge is more than an app—it&apos;s a lifeline for those who
+                need it most.
               </span>
             </div>
           </motion.div>
@@ -168,4 +162,4 @@ const ProjectDetail = ({
   );
 };
 
-export default ProjectDetail;
+export default BridgeDetail;

@@ -13,29 +13,16 @@ const ProjectCard = ({
   return (
     <motion.div
       layoutId={`project-${project.id}`}
-      className="relative cursor-pointer h-[calc(100vh-20rem)]"
+      className="relative cursor-pointer h-[calc(100vh-20rem)] group transition-all duration-300"
       onClick={onClick}
     >
-      <div className="relative overflow-hidden rounded-lg backdrop-blur-sm h-full bg-[url('/project_1.svg')] bg-cover bg-center transition-all duration-200 hover:brightness-125">
-        <motion.div
-          className="absolute inset-0"
-          whileHover={{ opacity: 0.9 }}
-          transition={{ duration: 0.2 }}
-        >
-          <div className="absolute top-0 left-0 w-8 h-8" />
-          <div className="absolute top-0 right-0 w-8 h-8" />
-          <div className="absolute bottom-0 left-0 w-8 h-8" />
-          <div className="absolute bottom-0 right-0 w-8 h-8" />
-        </motion.div>
-
-        <div className="absolute inset-0 p-6 flex flex-col justify-end bg-gradient-to-t from-black/80 to-transparent">
-          <motion.h3
-            layoutId={`title-${project.id}`}
-            className="text-8xl text-center text-light-cream scale-x-110"
-          >
-            {project.title}
-          </motion.h3>
-        </div>
+      <div className="relative overflow-hidden backdrop-blur-sm h-full">
+        <div
+          className="absolute inset-0 bg-cover bg-center transition-all duration-300 group-hover:scale-105"
+          style={{ backgroundImage: `url('${project.image}')` }}
+        />
+        <div className="absolute inset-0" />
+        <div className="absolute inset-0 flex items-end justify-center"></div>
       </div>
     </motion.div>
   );
