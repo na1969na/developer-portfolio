@@ -33,8 +33,8 @@ const RevealLinks = () => {
       </div>
       <div className="flex flex-col items-end gap-4 mt-8">
         <p className="text-lg">Check out my technical articles and code.</p>
-        <div className="flex gap-4">
-          <Image src="/noodle_fan.svg" alt="click" height={200} width={200} />
+        <div className="flex gap-8">
+          <Image src="/smile.svg" alt="click" height={100} width={100} />
           <div className="flex flex-col items-end gap-4">
             <FlipLink href="https://github.com/na1969na">Github</FlipLink>
             <FlipLink href="https://dev.to/na1969na">Dev.to</FlipLink>
@@ -59,7 +59,7 @@ const FlipLink = ({ children, href }: FlipLinkProps) => {
       initial="initial"
       whileHover="hovered"
       href={href}
-      className="relative block overflow-hidden whitespace-nowrap text-4xl font-black uppercase sm:text-7xl md:text-9xl hover:text-butter-yellow"
+      className="relative block overflow-hidden whitespace-nowrap text-4xl font-black uppercase sm:text-7xl md:text-9xl hover:text-[#0abfcb]"
       style={{
         lineHeight: 0.75,
       }}

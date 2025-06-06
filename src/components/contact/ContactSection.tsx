@@ -13,7 +13,7 @@ const ContactSection = () => {
       transition={{ duration: 0.5 }}
     >
       <div className="space-y-3">
-        <h1 className="text-4xl">Contact</h1>
+        <h1 className="text-5xl font-black">CONTACT</h1>
         <div>
           <p className="text-lg">
             I am always open to new opportunities and collaborations.
