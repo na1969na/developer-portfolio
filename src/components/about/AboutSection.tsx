@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Experience } from "@/types/type";
+import AnimatedText from "./AnimatedText";
 
 const experiences: Experience[] = [
   {
@@ -41,44 +42,51 @@ const experiences: Experience[] = [
 const AboutSection = () => {
   return (
     <div className="text-3xl pt-20 w-full relative">
-      <div className="w-full space-y-10">
+      <div className="w-full">
         <h1 className="text-5xl font-black">about.</h1>
-
-        <div className="flex items-center justify-center gap-8 my-15">
-          <motion.h1
-            className="font-black"
-            initial={{ y: 100, opacity: 0, scale: 0.5 }}
-            animate={{ y: 0, opacity: 1, scale: 1 }}
-            transition={{
-              duration: 1.2,
-              ease: [0.16, 1, 0.3, 1],
-              scale: {
-                duration: 0.8,
-                ease: "easeOut",
-              },
-            }}
-            style={{ fontSize: "8rem" }}
-          >
-            <div>Nana</div>
-            <div>Okamoto</div>
+        <div className="flex gap-8 mb-15">
+          <motion.h1 className="font-black flex flex-col justify-end pt-40 pb-20">
+            <div className="text-[10rem] -mb-12 flex">
+              <AnimatedText text="NANA" />
+            </div>
+            <div className="flex items-center gap-8">
+              <div className="text-[10rem]">
+                <AnimatedText text="OKAMOTO" />
+              </div>
+              <motion.div
+                className="w-48 h-48 overflow-hidden"
+                initial={{ scale: 0, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ 
+                  duration: 0.5,
+                  delay: "NANA OKAMOTO".length * 0.1,
+                  ease: "easeOut" 
+                }}
+              >
+                <Image
+                  src="/profile_image.png"
+                  alt="Nana Okamoto"
+                  width={250}
+                  height={390}
+                  className="object-cover object-top w-full h-full"
+                  priority
+                />
+              </motion.div>
+              <motion.div 
+                className="text-7xl"
+                initial={{ opacity: 0, scale: 0, rotate: -20 }}
+                animate={{ opacity: 1, scale: 1, rotate: 0 }}
+                transition={{
+                  duration: 0.5,
+                  delay: "NANA OKAMOTO".length * 0.1 + 0.3,
+                  ease: "easeOut"
+                }}
+              >
+                👋
+              </motion.div>
+            </div>
           </motion.h1>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
-            className="relative w-64 h-64 overflow-hidden"
-          >
-            <Image
-              src="/profile_image.png"
-              alt="Nana Okamoto"
-              fill
-              className="object-cover"
-              priority
-            />
-          </motion.div>
         </div>
-
         <div className="text-5xl space-y-2 w-full mt-15">
           <p className="tracking-wider leading-tight">
             <span className="text-pastel-blue">Full-stack developer</span> with{" "}
