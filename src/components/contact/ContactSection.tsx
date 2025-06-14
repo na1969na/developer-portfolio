@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import RevealLinks from "./RevealLinks";
+import FlipLink from "./RevealLinks";
 
 const ContactSection = () => {
   return (
@@ -13,18 +13,31 @@ const ContactSection = () => {
       transition={{ duration: 0.5 }}
     >
       <div className="space-y-3">
-        <h1 className="text-5xl font-black">CONTACT</h1>
-        <div>
+        <h1 className="text-5xl font-black text-center">CONTACT</h1>
+        <div className="text-center">
           <p className="text-lg">
-            I am always open to new opportunities and collaborations.
-          </p>
-          <p className="text-lg">
-            Feel free to reach out through any of the channels below.
+            I am always open to new opportunities and collaborations. Feel free
+            to reach out through any of the channels below.
           </p>
         </div>
       </div>
-      <div className="flex items-center gap-16">
-        <RevealLinks />
+      <div className="text-center text-3xl">
+        <hr />
+        <h2 className="pt-5">EMAIL</h2>
+        <FlipLink href="mailto:nanaokamoto.tech@gmail.com">
+          nanaokamoto.tech@gmail.com
+        </FlipLink>
+        <hr />
+        <h2 className="pt-5">LINKEDIN</h2>
+        <FlipLink href="https://www.linkedin.com/in/nana-okamoto/">
+          /nana-okamoto
+        </FlipLink>
+        <hr />
+        <h2 className="pt-5">GITHUB</h2>
+        <FlipLink href="https://github.com/na1969na">/na1969na</FlipLink>
+        <hr />
+        <h2 className="pt-5">DEV.TO</h2>
+        <FlipLink href="https://dev.to/na1969na">/na1969na</FlipLink>
       </div>
     </motion.div>
   );
