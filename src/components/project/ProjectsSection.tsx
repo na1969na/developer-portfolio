@@ -44,7 +44,7 @@ const ProjectsSection = () => {
 
   return (
     <motion.div
-      className="text-3xl pt-12 w-full"
+      className="text-xl md:text-2xl lg:text-3xl px-4 sm:px-6 md:px-8 lg:px-12 pt-6 md:pt-8 lg:pt-12 w-full"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
@@ -52,12 +52,16 @@ const ProjectsSection = () => {
     >
       <LayoutGroup>
         <div className="h-full flex flex-col">
-          <h1 className="text-5xl font-black mb-10">projects/</h1>
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-black mt-8 md:mt-12 lg:mt-16 mb-6 md:mb-8 lg:mb-10 px-2 sm:px-4">
+            projects/
+          </h1>
 
-          <div className="flex gap-18 flex-col">
+          <div className="flex gap-8 md:gap-12 lg:gap-18 flex-col px-2 sm:px-4">
             {projects.map((project) => (
               <div key={project.id}>
-                <h2 className="text-7xl font-bold mb-4">{project.title}</h2>
+                <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-3 md:mb-4">
+                  {project.title}
+                </h2>
                 <ProjectCard
                   key={project.id}
                   project={project}

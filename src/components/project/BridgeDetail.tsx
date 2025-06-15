@@ -35,10 +35,10 @@ const BridgeDetail = ({ onClose, id }: { onClose: () => void; id: string }) => {
         className="relative w-[90%] max-w-full h-[90vh] bg-black rounded-2xl overflow-hidden border border-white/20"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="absolute inset-0 p-12 flex flex-col overflow-y-auto">
+        <div className="absolute inset-0 p-4 md:p-8 lg:p-12 flex flex-col overflow-y-auto">
           <motion.h2
             layoutId={`title-${id}`}
-            className="text-5xl font-semibold"
+            className="text-3xl md:text-4xl lg:text-5xl font-semibold"
           >
             BRIDGE
           </motion.h2>
@@ -47,7 +47,7 @@ const BridgeDetail = ({ onClose, id }: { onClose: () => void; id: string }) => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="mt-4 max-w-3xl flex flex-col"
+            className="mt-2 md:mt-4 max-w-3xl flex flex-col text-sm md:text-base"
           >
             <span>Prevent Lonely Deaths - Stay Connected Daily.</span>
             <span>
@@ -60,13 +60,13 @@ const BridgeDetail = ({ onClose, id }: { onClose: () => void; id: string }) => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="flex justify-between items-center mt-4"
+            className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mt-4"
           >
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-2 md:gap-3">
               {technologies.map((tech) => (
                 <span
                   key={tech}
-                  className="px-4 py-2 bg-light-cream text-black rounded-full"
+                  className="px-2 md:px-4 py-1 md:py-2 text-sm md:text-base bg-light-cream text-black rounded-full"
                 >
                   {tech}
                 </span>
@@ -89,9 +89,17 @@ const BridgeDetail = ({ onClose, id }: { onClose: () => void; id: string }) => {
             transition={{ delay: 0.4 }}
             className="flex flex-col items-center mt-8 rounded-lg"
           >
-            <Image src="/bridge_1.png" alt="bridge" width={1000} height={1000} />
-            <h3 className="text-2xl font-semibold mt-8 mb-4">Story</h3>
-            <div className="space-y-4 text-center max-w-3xl flex flex-col">
+            <Image
+              src="/bridge_1.png"
+              alt="bridge"
+              width={1000}
+              height={1000}
+              className="w-full h-auto object-cover"
+            />
+            <h3 className="text-2xl md:text-3xl font-semibold mt-8 mb-4">
+              Story
+            </h3>
+            <div className="space-y-4 text-center max-w-3xl flex flex-col text-base md:text-lg">
               <span>
                 In Japan, the rise in lonely deaths highlights the urgent need
                 for stronger human connection. To address this, I developed
@@ -153,10 +161,12 @@ const BridgeDetail = ({ onClose, id }: { onClose: () => void; id: string }) => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.6 }}
             onClick={onClose}
-            className="absolute top-8 right-8 p-2 flex items-center gap-1 cursor-pointer"
+            className="absolute top-2 md:top-4 lg:top-8 right-2 md:right-4 lg:right-8 p-2 flex items-center gap-1 cursor-pointer hover:bg-white/10 rounded-full transition-colors"
           >
-            <X size={24} />
-            <span className="text-xl font-semibold underline">Close</span>
+            <X size={20} className="md:w-6 md:h-6" />
+            <span className="text-base md:text-xl font-semibold underline">
+              Close
+            </span>
           </motion.button>
         </div>
       </motion.div>

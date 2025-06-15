@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { AlignJustify, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
 
@@ -46,8 +46,12 @@ const Navbar = ({ activeSection, setActiveSection }: NavbarProps) => {
     <>
       {/* Mobile menu button */}
       <div className="fixed z-30 lg:hidden">
-        <button className="btn" onClick={() => setIsOpen(!isOpen)}>
-          {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+        <button className="pt-3" onClick={() => setIsOpen(!isOpen)}>
+          {isOpen ? (
+            <X className="h-15 w-15" />
+          ) : (
+            <AlignJustify className="h-15 w-15" />
+          )}
         </button>
       </div>
 
@@ -106,20 +110,20 @@ const Navbar = ({ activeSection, setActiveSection }: NavbarProps) => {
       {/* Mobile Navigation */}
       <motion.div
         className={cn(
-          "fixed top-0 right-0 h-full z-20 bg-card/95 backdrop-blur-sm",
-          isOpen ? "translate-x-0" : "translate-x-full"
+          "fixed top-0 left-0 right-0 z-20 bg-black",
+          isOpen ? "translate-y-0" : "translate-y-[-100%]"
         )}
-        initial={{ x: "100%" }}
-        animate={{ x: isOpen ? 0 : "100%" }}
+        initial={{ y: "-100%" }}
+        animate={{ y: isOpen ? 0 : "-100%" }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
       >
-        <div className="flex flex-col h-full py-12 px-6 w-64">
-          <nav className="flex-1 flex flex-col gap-2">
+        <div className="flex flex-col min-h-screen min-w-screen py-12 px-6 w-64">
+          <nav className="flex-1 flex flex-col items-center justify-center gap-8">
             {menuItems.map((item) => (
               <motion.button
                 key={item.id}
                 className={cn(
-                  "justify-start gap-3 py-3 text-base transition-all relative group overflow-hidden h-12",
+                  "text-xl font-medium transition-all relative group overflow-hidden h-12",
                   activeSection === item.id
                     ? "text-stone-50"
                     : "text-stone-500 hover:text-stone-50"
@@ -132,36 +136,8 @@ const Navbar = ({ activeSection, setActiveSection }: NavbarProps) => {
                       )
                     : handleMenuClick(item.id)
                 }
-                whileHover="hover"
-                initial="initial"
               >
-                <motion.div
-                  className="relative h-full"
-                  variants={{
-                    initial: { y: 0 },
-                    hover: { y: -30 },
-                  }}
-                  transition={{ duration: 0.3, ease: "easeInOut" }}
-                >
-                  {item.label}
-                </motion.div>
-                <motion.div
-                  className="absolute top-0 left-0 h-full"
-                  variants={{
-                    initial: { y: 30 },
-                    hover: { y: 0 },
-                  }}
-                  transition={{ duration: 0.3, ease: "easeInOut" }}
-                >
-                  {item.label}
-                </motion.div>
-                {activeSection === item.id && (
-                  <motion.div
-                    className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-pink-500 to-purple-500"
-                    layoutId="activeSectionMobile"
-                    transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                  />
-                )}
+                {item.label}
               </motion.button>
             ))}
           </nav>

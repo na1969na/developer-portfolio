@@ -7,16 +7,17 @@ const STAGGER = 0.025;
 interface FlipLinkProps {
   children: string;
   href: string;
+  className?: string;
 }
 
-const FlipLink = ({ children, href }: FlipLinkProps) => {
+const FlipLink = ({ children, href, className = "" }: FlipLinkProps) => {
   return (
     <div className="py-5">
       <motion.a
         initial="initial"
         whileHover="hovered"
         href={href}
-        className="relative block overflow-hidden whitespace-nowrap text-4xl font-black uppercase sm:text-5xl md:text-6xl hover:text-[#0abfcb]"
+        className={`relative block overflow-hidden whitespace-nowrap text-4xl font-black uppercase sm:text-5xl md:text-6xl hover:text-[#0abfcb] ${className}`}
         style={{
           lineHeight: 0.75,
         }}

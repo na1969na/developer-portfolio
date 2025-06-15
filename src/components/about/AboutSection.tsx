@@ -41,20 +41,22 @@ const experiences: Experience[] = [
 
 const AboutSection = () => {
   return (
-    <div className="text-3xl pt-20 w-full relative">
+    <div className="text-xl md:text-3xl pt-10 md:pt-20 w-full relative px-4 md:px-8">
       <div className="w-full">
-        <h1 className="text-5xl font-black">about.</h1>
-        <div className="flex gap-8 mb-15">
-          <motion.h1 className="font-black flex flex-col justify-end pt-40 pb-20">
-            <div className="text-[10rem] -mb-12 flex">
+        <h1 className="text-3xl md:text-5xl font-black mb-8 md:mb-12">
+          about.
+        </h1>
+        <div className="flex gap-4 md:gap-8 mb-8 md:mb-15">
+          <motion.h1 className="font-black flex flex-col justify-end pt-20 md:pt-40 pb-10 md:pb-20">
+            <div className="text-5xl md:text-[10rem] -mb-0 md:-mb-12 flex">
               <AnimatedText text="NANA" />
             </div>
-            <div className="flex items-center gap-8">
-              <div className="text-[10rem]">
+            <div className="flex flex-col lg:flex-row items-center gap-4 md:gap-8">
+              <div className="text-5xl md:text-[10rem]">
                 <AnimatedText text="OKAMOTO" />
               </div>
               <motion.div
-                className="w-48 h-48 overflow-hidden"
+                className="w-32 h-32 md:w-48 md:h-48 overflow-hidden"
                 initial={{ scale: 0, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{
@@ -75,15 +77,15 @@ const AboutSection = () => {
             </div>
           </motion.h1>
         </div>
-        <div className="text-5xl space-y-2 w-full mt-15">
-          <p className="tracking-wider leading-tight">
+        <div className="text-2xl md:text-5xl space-y-4 md:space-y-6 w-full mt-8 md:mt-15">
+          <p className="tracking-wider leading-tight px-2 md:px-0">
             <span className="text-pastel-blue">Full-stack developer</span> with{" "}
             <span className="relative">
               4+ years
               <svg
                 viewBox="0 0 286 73"
                 fill="none"
-                className="absolute -left-2 -right-2 -top-2 bottom-0 translate-y-1"
+                className="absolute -left-2 -right-2 -top-2 bottom-0 translate-y-1 w-full"
               >
                 <motion.path
                   initial={{ pathLength: 0 }}
@@ -100,14 +102,14 @@ const AboutSection = () => {
             </span>{" "}
             of experience in enterprise application development.
           </p>
-          <p className="tracking-wider leading-tight">
+          <p className="tracking-wider leading-tight px-2 md:px-0">
             Based in{" "}
-            <span className="bg-pastel-blue text-black px-4 py-1 rounded-full inline-block font-semibold">
+            <span className="bg-pastel-blue text-black px-3 md:px-4 py-1 rounded-full inline-block font-semibold text-lg md:text-2xl">
               Vancouver, BC
             </span>
             , focusing on building scalable and efficient solutions.
           </p>
-          <p className="tracking-wider leading-tight">
+          <p className="tracking-wider leading-tight px-2 md:px-0">
             Passionate about{" "}
             <span className="text-pastel-blue">
               {"{"}
@@ -155,11 +157,13 @@ const AboutSection = () => {
         </div>
       </div>
 
-      <hr className="my-16" />
+      <hr className="my-8 md:my-16" />
 
-      <div>
-        <h2 className="my-16 text-5xl font-black">experience.</h2>
-        <div className="space-y-10">
+      <div className="px-2 md:px-0">
+        <h2 className="my-8 md:my-16 text-3xl md:text-5xl font-black">
+          experience.
+        </h2>
+        <div className="space-y-6 md:space-y-10">
           {experiences.map((exp, index) => (
             <motion.div
               key={index}
@@ -171,13 +175,13 @@ const AboutSection = () => {
                 ease: "easeOut",
               }}
               viewport={{ once: false }}
-              className="flex flex-col gap-4 text-3xl p-6 border border-light-cream rounded-2xl"
+              className="flex flex-col gap-3 md:gap-4 text-xl md:text-3xl p-6 md:p-8 border border-light-cream rounded-2xl"
             >
-              <h3 className="font-semibold">
+              <h3 className="font-semibold text-lg md:text-2xl">
                 {exp.title} | {exp.company}
               </h3>
-              <p className="text-xl opacity-70">{exp.period}</p>
-              <ul className="text-xl opacity-70 list-disc pl-6">
+              <p className="text-base md:text-xl opacity-70">{exp.period}</p>
+              <ul className="text-base md:text-xl opacity-70 list-disc pl-4 md:pl-6">
                 {exp.description.map((item, index) => (
                   <motion.li
                     key={index}
@@ -206,7 +210,7 @@ const AboutSection = () => {
                       ease: "easeOut",
                     }}
                     viewport={{ once: false }}
-                    className="bg-pastel-blue text-xl px-3 py-2 rounded-full text-black font-semibold"
+                    className="bg-pastel-blue text-base md:text-xl px-2 md:px-3 py-1 md:py-2 rounded-full text-black font-semibold"
                   >
                     {skill}
                   </motion.span>
