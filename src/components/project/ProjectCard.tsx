@@ -21,7 +21,7 @@ const ProjectCard = ({
           className="absolute inset-0 bg-cover bg-center transition-all duration-300 group-hover:scale-105"
           style={{ backgroundImage: `url('${project.image}')` }}
         />
-        <div className="absolute inset-0" />
+        <div className="absolute inset-0 bg-black/0 transition-all duration-300 group-hover:bg-black/30" />
         <div className="absolute inset-0 flex items-end justify-center"></div>
       </div>
     </motion.div>

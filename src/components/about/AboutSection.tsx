@@ -57,10 +57,10 @@ const AboutSection = () => {
                 className="w-48 h-48 overflow-hidden"
                 initial={{ scale: 0, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
-                transition={{ 
+                transition={{
                   duration: 0.5,
-                  delay: "NANA OKAMOTO".length * 0.1,
-                  ease: "easeOut" 
+                  delay: 0.5,
+                  ease: "easeOut",
                 }}
               >
                 <Image
@@ -71,18 +71,6 @@ const AboutSection = () => {
                   className="object-cover object-top w-full h-full"
                   priority
                 />
-              </motion.div>
-              <motion.div 
-                className="text-7xl"
-                initial={{ opacity: 0, scale: 0, rotate: -20 }}
-                animate={{ opacity: 1, scale: 1, rotate: 0 }}
-                transition={{
-                  duration: 0.5,
-                  delay: "NANA OKAMOTO".length * 0.1 + 0.3,
-                  ease: "easeOut"
-                }}
-              >
-                👋
               </motion.div>
             </div>
           </motion.h1>

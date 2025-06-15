@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import KeyFeature from "./KeyFeature";
+import Image from "next/image";
 
 const technologies = [
   "React",
@@ -88,7 +89,8 @@ const BridgeDetail = ({ onClose, id }: { onClose: () => void; id: string }) => {
             transition={{ delay: 0.4 }}
             className="flex flex-col items-center mt-8 rounded-lg"
           >
-            <h3 className="text-2xl font-semibold mb-4">Story</h3>
+            <Image src="/bridge_1.png" alt="bridge" width={1000} height={1000} />
+            <h3 className="text-2xl font-semibold mt-8 mb-4">Story</h3>
             <div className="space-y-4 text-center max-w-3xl flex flex-col">
               <span>
                 In Japan, the rise in lonely deaths highlights the urgent need

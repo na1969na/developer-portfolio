@@ -10,13 +10,13 @@ const projects: Project[] = [
   {
     id: "1",
     title: "BRIDGE",
-    image: "/project_3.svg",
+    image: "bridge_image.svg",
   },
-  {
-    id: "2",
-    title: "Gatherly",
-    image: "/project_4.svg",
-  },
+  // {
+  //   id: "2",
+  //   title: "Gatherly",
+  //   image: "/project_4.svg",
+  // },
 ];
 
 const ProjectsSection = () => {
