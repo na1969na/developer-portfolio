@@ -25,55 +25,51 @@ const ContactSection = () => {
       </div>
       <div className="text-center text-xl md:text-2xl lg:text-3xl">
         <hr />
-        <h2 className="pt-3 md:pt-5">EMAIL</h2>
         <div className="hidden md:block">
           <FlipLink
             href="mailto:nanaokamoto.tech@gmail.com"
             className="whitespace-normal break-all"
           >
-            nanaokamoto.tech@gmail.com
+            EMAIL
           </FlipLink>
         </div>
         <a
           href="mailto:nanaokamoto.tech@gmail.com"
-          className="md:hidden block py-5 text-xl hover:text-[#0abfcb]"
+          className="md:hidden block py-5 text-xl font-bold hover:text-[#0abfcb]"
         >
-          nanaokamoto.tech@gmail.com
+          EMAIL
         </a>
         <hr />
-        <h2 className="pt-3 md:pt-5">LINKEDIN</h2>
         <div className="hidden md:block">
           <FlipLink href="https://www.linkedin.com/in/nana-okamoto/">
-            /nana-okamoto
+            LINKEDIN
           </FlipLink>
         </div>
         <a
           href="https://www.linkedin.com/in/nana-okamoto/"
-          className="md:hidden block py-5 text-xl hover:text-[#0abfcb]"
+          className="md:hidden block py-5 text-xl font-bold hover:text-[#0abfcb]"
         >
-          /nana-okamoto
+          LINKEDIN
         </a>
         <hr />
-        <h2 className="pt-3 md:pt-5">GITHUB</h2>
         <div className="hidden md:block">
-          <FlipLink href="https://github.com/na1969na">/na1969na</FlipLink>
+          <FlipLink href="https://github.com/na1969na">GITHUB</FlipLink>
         </div>
         <a
           href="https://github.com/na1969na"
-          className="md:hidden block py-5 text-xl hover:text-[#0abfcb]"
+          className="md:hidden block py-5 text-xl font-bold hover:text-[#0abfcb]"
         >
-          /na1969na
+          GITHUB
         </a>
         <hr />
-        <h2 className="pt-3 md:pt-5">DEV.TO</h2>
         <div className="hidden md:block">
-          <FlipLink href="https://dev.to/na1969na">/na1969na</FlipLink>
+          <FlipLink href="https://dev.to/na1969na">DEV.TO</FlipLink>
         </div>
         <a
           href="https://dev.to/na1969na"
-          className="md:hidden block py-5 text-xl hover:text-[#0abfcb]"
+          className="md:hidden block py-5 text-xl font-bold hover:text-[#0abfcb]"
         >
-          /na1969na
+          DEV.TO
         </a>
         <hr />
       </div>
