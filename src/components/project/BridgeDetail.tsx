@@ -66,7 +66,7 @@ const BridgeDetail = ({ onClose, id }: { onClose: () => void; id: string }) => {
               {technologies.map((tech) => (
                 <span
                   key={tech}
-                  className="px-2 md:px-4 py-1 md:py-2 text-sm md:text-base bg-light-cream text-black rounded-full"
+                  className="px-2 md:px-4 py-1 md:py-2 text-sm md:text-base bg-light-cream text-black font-semibold rounded-full"
                 >
                   {tech}
                 </span>

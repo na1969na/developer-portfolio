@@ -77,7 +77,7 @@ const AboutSection = () => {
             </div>
           </motion.h1>
         </div>
-        <div className="text-2xl md:text-5xl space-y-4 md:space-y-6 w-full mt-8 md:mt-15">
+        <div className="text-2xl md:text-4xl space-y-4 md:space-y-6 w-full mt-8 md:mt-15">
           <p className="tracking-wider leading-tight px-2 md:px-0">
             <span className="text-pastel-blue">Full-stack developer</span> with{" "}
             <span className="relative">
@@ -104,9 +104,9 @@ const AboutSection = () => {
           </p>
           <p className="tracking-wider leading-tight px-2 md:px-0">
             Based in{" "}
-            <span className="bg-pastel-blue text-black px-3 md:px-4 py-1 rounded-full inline-block font-semibold text-lg md:text-2xl">
+            <span className="bg-pastel-blue text-black px-3 md:px-4 py-1 rounded-full inline-block font-semibold">
               Vancouver, BC
-            </span>
+            </span>{" "}
             , focusing on building scalable and efficient solutions.
           </p>
           <p className="tracking-wider leading-tight px-2 md:px-0">
