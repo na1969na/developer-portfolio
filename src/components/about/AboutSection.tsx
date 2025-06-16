@@ -46,37 +46,41 @@ const AboutSection = () => {
         <h1 className="text-3xl md:text-5xl font-black mb-8 md:mb-12">
           about.
         </h1>
-        <div className="flex gap-4 md:gap-8 mb-8 md:mb-15">
-          <motion.h1 className="font-black flex flex-col justify-end pt-20 md:pt-40 pb-10 md:pb-20">
-            <div className="text-5xl md:text-[10rem] -mb-0 md:-mb-12 flex">
+        <div className="flex flex-col md:flex-row items-center justify-between pt-10 md:pt-20 pb-10 md:pb-20 gap-8 md:gap-12">
+          <div className="flex flex-col font-black order-2 md:order-1">
+            <div className="text-5xl md:text-[10rem]">
               <AnimatedText text="NANA" />
             </div>
-            <div className="flex flex-col lg:flex-row items-center gap-4 md:gap-8">
-              <div className="text-5xl md:text-[10rem]">
-                <AnimatedText text="OKAMOTO" />
-              </div>
-              <motion.div
-                className="w-32 h-32 md:w-48 md:h-48 overflow-hidden"
-                initial={{ scale: 0, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{
-                  duration: 0.5,
-                  delay: 0.5,
-                  ease: "easeOut",
-                }}
-              >
-                <Image
-                  src="/profile_image.png"
-                  alt="Nana Okamoto"
-                  width={250}
-                  height={390}
-                  className="object-cover object-top w-full h-full"
-                  priority
-                />
-              </motion.div>
+            <div className="text-5xl md:text-[10rem]">
+              <AnimatedText text="OKAMOTO" />
             </div>
-          </motion.h1>
+          </div>
+          <motion.div
+            className="w-48 h-48 md:w-64 md:h-64 overflow-hidden order-1 md:order-2"
+            initial={{ scale: 0, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{
+              duration: 0.5,
+              delay: 0.5,
+              ease: "easeOut",
+            }}
+          >
+            <Image
+              src="/profile_image.png"
+              alt="Nana Okamoto"
+              width={250}
+              height={390}
+              className="object-cover object-top w-full h-full"
+              priority
+            />
+          </motion.div>
         </div>
+
+        {/* <div className="font-black flex flex-col justify-end pt-20 md:pt-40 pb-10 md:pb-20">
+            <div className="flex flex-col lg:flex-row items-center gap-4 md:gap-8">
+              
+            </div>
+          </div> */}
         <div className="text-2xl md:text-4xl space-y-4 md:space-y-6 w-full mt-8 md:mt-15">
           <p className="tracking-wider leading-tight px-2 md:px-0">
             <span className="text-pastel-blue">Full-stack developer</span> with{" "}
