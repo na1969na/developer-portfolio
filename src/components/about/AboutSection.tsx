@@ -46,7 +46,7 @@ const AboutSection = () => {
         <h1 className="text-3xl md:text-5xl font-black mb-8 md:mb-12">
           about.
         </h1>
-        <div className="flex flex-col md:flex-row items-center justify-between pt-10 md:pt-20 pb-10 md:pb-20 gap-8 md:gap-12">
+        <div className="flex flex-col md:flex-row items-center justify-between pt-10 md:pt-30 pb-10 md:pb-20 gap-8 md:gap-12">
           <div className="flex flex-col font-black order-2 md:order-1">
             <div className="text-5xl md:text-[10rem]">
               <AnimatedText text="NANA" />
