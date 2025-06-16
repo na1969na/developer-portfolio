@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Poppins } from "next/font/google";
 import "./globals.css";
+import Footer from "../components/ui/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,7 +21,8 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: "Nana Okamoto | Full-Stack Developer",
-  description: "Professional portfolio showcasing engineering projects and skills.",
+  description:
+    "Professional portfolio showcasing engineering projects and skills.",
 };
 
 export default function RootLayout({
@@ -31,9 +33,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} antialiased min-h-screen flex flex-col`}
       >
-        {children}
+        <main className="flex-grow">{children}</main>
+        <Footer />
       </body>
     </html>
   );
